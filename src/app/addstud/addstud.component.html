@@ -1,0 +1,17 @@
+<hr>
+<form [formGroup]="studform" name="studform" (ngSubmit)=submit()>
+    <div>
+        <label for="fname">Enter Name:</label>
+        <input matInput formControlName="fname">
+        <input type="text" class="form-control" formControlName="fname">
+        <div class="alert alert-danger" *ngIf="studform.get('fname').invalid && (studform.get('fname').touched || studform.get('fname').dirty)">
+          <div *ngIf="studform.get('fname').errors.required">Please enter name</div>
+         <div *ngIf="studform.get('fname').errors.minlength">Minimun length should be three..!!</div>
+        </div>
+    </div>
+    <div>
+        <label for="pswd">Enter Password:</label>
+        <input type="password" class="form-control" formControlName="pswd">
+    </div>
+    <button class="btn btn-primary" type="submit">Save</button>
+</form>

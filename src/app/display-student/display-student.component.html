@@ -1,0 +1,21 @@
+<div>
+<h1 style="text-align: center; float: left;">Student details</h1>
+<button class="btn btn-warning mt-1" style="float: right;" type="submit" (click)="redirect()" >Add Stud</button>
+</div>
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>_id</th>
+        <th>Name</th>
+        <th>Password</th>
+        <th>Actions</th>
+    </tr>
+    <tr *ngFor="let stud of studs">
+        <td (click)="senddata(stud)">{{stud._id}}</td>
+        <td (click)="senddata(stud)">{{stud.name}}</td>
+        <td (click)="senddata(stud)">{{stud.pswd}}</td>
+        <td> 
+            <button class="btn btn-danger" type="submit" (click)="delete(stud)" >Delete</button>
+        </td>
+    </tr>
+</table>
+
